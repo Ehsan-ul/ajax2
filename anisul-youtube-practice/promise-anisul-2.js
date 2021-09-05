@@ -26,24 +26,44 @@ const task4 = () => {
   });
 };
 
-task1()
-  .then((res) => {
-    console.log(res);
-  })
-  .then(task2)
-  .then((res) => {
-    console.log(res);
-  })
-  .then(task3)
-  .then((res) => {
-    console.log(res);
-  })
-  .then(task4)
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((e) => {
+// task1()
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .then(task2)
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .then(task3)
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .then(task4)
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((e) => {
+//     console.log(e);
+//   });
+
+// async function callAllTask() {}
+const callAllTask = async () => {
+  try {
+    const t1 = await task1();
+    console.log(t1);
+
+    const t2 = await task2();
+    console.log(t2);
+
+    const t3 = await task3();
+    console.log(t3);
+
+    const t4 = await task4();
+    console.log(t4);
+  } catch (e) {
     console.log(e);
-  });
+  }
+};
+callAllTask();
 
 console.log('Bye!');
